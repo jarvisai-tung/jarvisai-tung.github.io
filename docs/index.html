@@ -2,20 +2,1865 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TungDevAI</title>
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <!-- Root luon vao landing — khong load chat/login -->
-  <meta http-equiv="refresh" content="0;url=landing.html" />
-  <link rel="icon" href="./assets/icon.jpg" type="image/jpeg" />
-  <script>
-    // Hard redirect (tranh cache index chat cu → login)
-    location.replace("landing.html" + (location.search || "") + (location.hash || ""));
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>TungDevAI Studio — Siêu Nền Tảng Trí Tuệ Nhân Tạo & AI Agent Toàn Diện 2026</title>
+  
+  <meta name="description" content="TungDevAI Studio: Nền tảng AI thế hệ mới 2026 tích hợp Coder Pro, Vision 1.5 tạo ảnh HD 8K, Live Web Search thời gian thực, phân tích tài liệu PDF/Word/Code, cùng kho 6 Trợ lý AI chuyên sâu." />
+  <meta name="keywords" content="TungDevAI, AI coding, tạo ảnh AI 8K, tìm kiếm web AI, phân tích tài liệu AI, AI Agent Việt Nam, bot lập trình tiếng Việt, DeepSeek, Gemini" />
+  <meta name="author" content="TungDevAI Studio" />
+  <link rel="canonical" href="https://tungai.fun/" />
+
+  <!-- Favicons Suite -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico?v=g3" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=g3" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon-192.png?v=g3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=g3" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tungai.fun/" />
+  <meta property="og:title" content="TungDevAI Studio — Siêu Nền Tảng Trí Tuệ Nhân Tạo 2026" />
+  <meta property="og:description" content="Tăng tốc phát triển phần mềm gấp 10 lần, tạo ảnh nghệ thuật 8K, tra cứu web thời gian thực và phân tích tài liệu thông minh." />
+  <meta property="og:image" content="https://tungai.fun/assets/tungdevai-core-logo.jpg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================================
+       COSMIC QUANTUM LUXURY DESIGN SYSTEM
+       ========================================================================= */
+    :root {
+      --bg-base: #060813;
+      --bg-surface: #0a0e1f;
+      --bg-card: rgba(12, 18, 38, 0.72);
+      --bg-card-hover: rgba(18, 27, 56, 0.88);
+      
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.45);
+      --primary-subtle: rgba(99, 102, 241, 0.12);
+      
+      --cyan: #06b6d4;
+      --cyan-glow: rgba(6, 182, 212, 0.4);
+      --violet: #8b5cf6;
+      --pink: #ec4899;
+      --gold: #f59e0b;
+      
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(99, 102, 241, 0.35);
+      
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: var(--font-main);
+    }
+
+    body {
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    
+    /* Cinematic 2026 AI Landscape Layer */
+    .scenery-bg-layer {
+      position: fixed;
+      top: -4%;
+      left: -4%;
+      width: 108%;
+      height: 108%;
+      z-index: 0;
+      pointer-events: none;
+      background: 
+        radial-gradient(ellipse at 50% 20%, rgba(6, 8, 19, 0.18) 0%, rgba(6, 8, 19, 0.68) 45%, #060813 85%),
+        url('assets/cyber_scenery_bg.jpg') center top / cover no-repeat;
+      opacity: 0.65;
+      filter: saturate(1.2) contrast(1.08);
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+
+    /* Ambient Background Elements */
+    #canvas-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-orb-1 {
+      position: fixed;
+      top: -15%;
+      left: 20%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(139, 92, 246, 0.12) 50%, transparent 70%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+      animation: drift-orb 20s infinite alternate ease-in-out;
+    }
+
+    .glow-orb-2 {
+      position: fixed;
+      bottom: -10%;
+      right: 10%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, rgba(236, 72, 153, 0.06) 50%, transparent 70%);
+      filter: blur(90px);
+      z-index: 0;
+      pointer-events: none;
+      animation: drift-orb 25s infinite alternate-reverse ease-in-out;
+    }
+
+    @keyframes drift-orb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, 30px) scale(1.1); }
+      100% { transform: translate(-30px, -20px) scale(0.95); }
+    }
+
+    /* Typography Utilities */
+    .gradient-text-animated {
+      background: linear-gradient(135deg, #ffffff 0%, #818cf8 32%, #06b6d4 68%, #c084fc 100%);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: text-shimmer 8s linear infinite;
+    }
+
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #f97316 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes text-shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Layout Containers */
+    .site-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* =========================================================================
+       HEADER / NAVBAR
+       ========================================================================= */
+    .header-nav-wrap {
+      position: fixed;
+      top: 1.2rem;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      padding: 0 1.2rem;
+    }
+
+    .navbar-glass {
+      width: 100%;
+      max-width: 1160px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1.4rem;
+      background: rgba(10, 14, 31, 0.78);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 999px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(99, 102, 241, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo-wrap {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      padding: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 18px rgba(99, 102, 241, 0.45);
+    }
+
+    .brand-logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-tagline {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #818cf8;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #818cf8;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-nav-login {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.2s ease;
+    }
+
+    .btn-nav-login:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .btn-nav-studio {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 9px 20px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.45);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-nav-studio:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.65);
+    }
+
+    /* =========================================================================
+       HERO SECTION
+       ========================================================================= */
+    .hero-section {
+      padding-top: 8.5rem;
+      padding-bottom: 4rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #a5b4fc;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 0 18px rgba(99, 102, 241, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #818cf8;
+      box-shadow: 0 0 10px #818cf8;
+      animation: pulse-dot 1.5s infinite alternate;
+    }
+
+    @keyframes pulse-dot {
+      0% { transform: scale(0.9); opacity: 0.6; }
+      100% { transform: scale(1.3); opacity: 1; }
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      max-width: 980px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--text-muted);
+      max-width: 760px;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-hero-primary {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 14px 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 35px rgba(99, 102, 241, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .btn-hero-primary:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 50px rgba(99, 102, 241, 0.75);
+    }
+
+    .btn-hero-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #f8fafc;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(129, 140, 248, 0.45);
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================================
+       INTERACTIVE LIVE TERMINAL MOCKUP
+       ========================================================================= */
+    .mockup-container {
+      width: 100%;
+      max-width: 1040px;
+      background: rgba(11, 15, 33, 0.85);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(99, 102, 241, 0.2);
+      backdrop-filter: blur(25px);
+      overflow: hidden;
+      text-align: left;
+      margin-bottom: 5rem;
+    }
+
+    .mockup-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: rgba(8, 11, 24, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .mockup-traffic-dots {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .traffic-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .traffic-dot.red { background: #ef4444; }
+    .traffic-dot.yellow { background: #f59e0b; }
+    .traffic-dot.green { background: #10b981; }
+
+    .mockup-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mockup-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .mockup-tab-btn.active {
+      background: rgba(99, 102, 241, 0.2);
+      color: #818cf8;
+    }
+
+    .mockup-body {
+      padding: 1.5rem 2rem;
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      min-height: 240px;
+    }
+
+    .mockup-code-highlight {
+      color: #818cf8;
+    }
+    .mockup-code-comment {
+      color: #64748b;
+    }
+    .mockup-code-func {
+      color: #06b6d4;
+    }
+    .mockup-code-str {
+      color: #fbbf24;
+    }
+
+    /* =========================================================================
+       STATS RIBBON
+       ========================================================================= */
+    .stats-ribbon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 6rem;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 1.8rem;
+      text-align: center;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+    }
+    .stat-card:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(99, 102, 241, 0.15);
+    }
+
+    .stat-value {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* =========================================================================
+       MODEL CLUSTER SECTION (4 GIANTS)
+       ========================================================================= */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.15);
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 6rem;
+    }
+
+    .model-card-giant {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .model-card-giant:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(99, 102, 241, 0.2);
+      background: var(--bg-card-hover);
+    }
+
+    .model-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .model-card-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #f8fafc;
+      margin-bottom: 0.5rem;
+    }
+
+    .model-card-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .model-card-tag {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 6px;
+      align-self: flex-start;
+    }
+
+    /* =========================================================================
+       BENTO GRID: KHO 6 TRỢ LÝ AI & TÍNH NĂNG ĐỘT PHÁ
+       ========================================================================= */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 6rem;
+    }
+
+    .bento-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+    }
+    .bento-item:hover {
+      border-color: var(--border-glow);
+      transform: translateY(-4px);
+      background: var(--bg-card-hover);
+    }
+
+    .bento-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .bento-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.6rem;
+    }
+
+    .bento-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* =========================================================================
+       PRICING SECTION
+       ========================================================================= */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 6rem;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(15px);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .pricing-card.featured {
+      border-color: #6366f1;
+      box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+      background: rgba(15, 21, 48, 0.85);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 999px;
+      box-shadow: 0 0 16px rgba(99, 102, 241, 0.6);
+    }
+
+    .plan-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .plan-price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+    }
+    .plan-price span {
+      font-size: 1rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .plan-features-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .plan-feature-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .plan-feature-item.highlight {
+      color: #f1f5f9;
+      font-weight: 600;
+    }
+
+    .btn-plan-action {
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 13px;
+      border-radius: 12px;
+      transition: all 0.25s ease;
+    }
+    .btn-plan-action.primary {
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: #ffffff;
+      box-shadow: 0 0 22px rgba(99, 102, 241, 0.45);
+    }
+    .btn-plan-action.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(99, 102, 241, 0.7);
+    }
+    .btn-plan-action.secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+    .btn-plan-action.secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* =========================================================================
+       FOOTER SECTION
+       ========================================================================= */
+    .site-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 4rem 0 2rem 0;
+      background: rgba(6, 8, 19, 0.96);
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col-title {
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-link-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.2s ease;
+    }
+    .footer-link-item a:hover {
+      color: #818cf8;
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero-title { font-size: 2.5rem; }
+    }
+
+    /* =========================================================================
+       8D QUANTUM CINEMATIC ANIMATION SYSTEM (2026 ULTRA LUXURY)
+       ========================================================================= */
+    :root {
+      --neon-cyan: #06b6d4;
+      --neon-blue: #38bdf8;
+      --neon-indigo: #6366f1;
+      --neon-violet: #8b5cf6;
+      --neon-pink: #ec4899;
+    }
+
+    /* 8D 3D Perspective Context */
+    .perspective-container {
+      perspective: 1400px;
+      transform-style: preserve-3d;
+    }
+
+    /* 8D Holographic Specular Tilt Cards */
+    .tilt-card-8d {
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
+      transition: transform 0.15s cubic-bezier(0.2, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .tilt-card-8d:hover {
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 35px rgba(99, 102, 241, 0.35);
+    }
+    .tilt-card-8d .card-glare-8d {
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 5;
+      mix-blend-mode: overlay;
+    }
+    .tilt-card-8d:hover .card-glare-8d {
+      opacity: 1;
+    }
+
+    /* 8D Traveling Laser Border Sweep */
+    .laser-border-8d {
+      position: relative;
+    }
+    .laser-border-8d::before {
+      content: '';
+      position: absolute;
+      inset: -1.5px;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(56, 189, 248, 0) 25%, 
+        #38bdf8 50%, 
+        #818cf8 65%, 
+        rgba(139, 92, 246, 0) 80%, 
+        transparent 100%);
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: laserSweep 4s linear infinite;
+      pointer-events: none;
+      z-index: 4;
+    }
+    @keyframes laserSweep {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 8D Gyroscope Reactor (3D Holographic Core) */
+    .gyro-stage-8d {
+      position: relative;
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 2rem auto;
+      perspective: 1000px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(6, 8, 19, 0.92) 0%, rgba(14, 165, 233, 0.2) 50%, transparent 75%);
+      box-shadow: 0 0 50px rgba(6, 8, 19, 0.95);
+      border-radius: 50%;
+    }
+    .gyro-satellite {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 14px #38bdf8, 0 0 25px #0ea5e9;
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .gyro-satellite.sat-pink {
+      background: #f43f5e;
+      box-shadow: 0 0 14px #f43f5e, 0 0 25px #fb7185;
+      top: auto;
+      bottom: -4px;
+    }
+    .gyro-core-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      animation: gyroFloat 6s ease-in-out infinite alternate;
+    }
+    @keyframes gyroFloat {
+      0% { transform: translateY(0px) rotateX(12deg) rotateY(0deg); }
+      50% { transform: translateY(-12px) rotateX(18deg) rotateY(180deg); }
+      100% { transform: translateY(0px) rotateX(12deg) rotateY(360deg); }
+    }
+    .gyro-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px dashed rgba(56, 189, 248, 0.4);
+      transform-style: preserve-3d;
+      pointer-events: none;
+    }
+    .gyro-ring-1 {
+      border-color: rgba(56, 189, 248, 0.7);
+      box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+      animation: spinRing1 8s linear infinite;
+    }
+    .gyro-ring-2 {
+      inset: 12px;
+      border: 1.5px solid rgba(129, 140, 248, 0.6);
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.35);
+      animation: spinRing2 6s linear infinite reverse;
+    }
+    .gyro-ring-3 {
+      inset: 24px;
+      border: 1.5px dotted rgba(236, 72, 153, 0.6);
+      box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+      animation: spinRing3 10s linear infinite;
+    }
+    @keyframes spinRing1 {
+      0% { transform: rotateX(65deg) rotateY(20deg) rotateZ(0deg); }
+      100% { transform: rotateX(65deg) rotateY(20deg) rotateZ(360deg); }
+    }
+    @keyframes spinRing2 {
+      0% { transform: rotateX(30deg) rotateY(70deg) rotateZ(0deg); }
+      100% { transform: rotateX(30deg) rotateY(70deg) rotateZ(360deg); }
+    }
+    @keyframes spinRing3 {
+      0% { transform: rotateX(80deg) rotateY(-40deg) rotateZ(0deg); }
+      100% { transform: rotateX(80deg) rotateY(-40deg) rotateZ(360deg); }
+    }
+    .gyro-central-orb {
+      overflow: hidden;
+      isolation: isolate;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 48px;
+      height: 48px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #ffffff, #38bdf8 40%, #6366f1 80%);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.8), 0 0 60px rgba(99, 102, 241, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: orbPulse 3s ease-in-out infinite alternate;
+    }
+    @keyframes orbPulse {
+      0% { transform: translate(-50%, -50%) scale(0.92); box-shadow: 0 0 25px rgba(56, 189, 248, 0.8), 0 0 45px rgba(99, 102, 241, 0.4); }
+      100% { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 0 40px rgba(56, 189, 248, 0.95), 0 0 70px rgba(129, 140, 248, 0.7); }
+    }
+    .gyro-central-orb img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* 8D Neural Frequency Soundwave Visualizer */
+    .frequency-visualizer-8d {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 18px;
+      padding: 0 8px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.25);
+      border-radius: 999px;
+    }
+    .freq-bar-8d {
+      width: 2.5px;
+      height: 4px;
+      background: linear-gradient(180deg, #38bdf8, #818cf8);
+      border-radius: 2px;
+      animation: freqDance 1.2s ease-in-out infinite alternate;
+    }
+    .freq-bar-8d:nth-child(1) { animation-delay: 0.1s; height: 6px; }
+    .freq-bar-8d:nth-child(2) { animation-delay: 0.3s; height: 12px; }
+    .freq-bar-8d:nth-child(3) { animation-delay: 0.5s; height: 16px; }
+    .freq-bar-8d:nth-child(4) { animation-delay: 0.2s; height: 9px; }
+    .freq-bar-8d:nth-child(5) { animation-delay: 0.4s; height: 14px; }
+    .freq-bar-8d:nth-child(6) { animation-delay: 0.15s; height: 8px; }
+    .freq-bar-8d:nth-child(7) { animation-delay: 0.35s; height: 15px; }
+    .freq-bar-8d:nth-child(8) { animation-delay: 0.25s; height: 5px; }
+    @keyframes freqDance {
+      0% { transform: scaleY(0.3); opacity: 0.5; }
+      100% { transform: scaleY(1.3); opacity: 1; }
+    }
+
+    /* 8D Telemetry Quantum Tag */
+    .telemetry-tag-8d {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      font-family: var(--font-mono);
+      color: #7dd3fc;
+      background: rgba(14, 165, 233, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* 8D Quantum Shockwave Ripple Effect on Click */
+    .quantum-ripple-8d {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0);
+      border: 2px solid rgba(56, 189, 248, 0.8);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), inset 0 0 15px rgba(129, 140, 248, 0.3);
+      animation: rippleExpand 0.75s cubic-bezier(0.15, 0.85, 0.35, 1) forwards;
+      z-index: 9999;
+    }
+    @keyframes rippleExpand {
+      0% { width: 0px; height: 0px; opacity: 1; }
+      100% { width: 320px; height: 320px; opacity: 0; transform: translate(-50%, -50%) scale(1); }
+    }
+
+    /* 8D Cyber HUD Corners */
+    .hud-box-8d {
+      position: relative;
+    }
+    .hud-box-8d::after {
+      content: '';
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 8px;
+      height: 8px;
+      border-top: 1.5px solid rgba(56, 189, 248, 0.6);
+      border-right: 1.5px solid rgba(56, 189, 248, 0.6);
+      pointer-events: none;
+    }
+    .hud-box-8d::before {
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      width: 8px;
+      height: 8px;
+      border-bottom: 1.5px solid rgba(56, 189, 248, 0.6);
+      border-left: 1.5px solid rgba(56, 189, 248, 0.6);
+      pointer-events: none;
+    }
+
+  </style>
 </head>
-<body style="margin:0;background:#0b0f19;color:#e8eefc;font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh">
-  <p>Đang mở trang chủ… <a href="landing.html" style="color:#6ea8ff">Bấm vào đây nếu không tự chuyển</a></p>
+<body>
+  <!-- Cinematic 2026 AI Landscape Layer -->
+  <div class="scenery-bg-layer" id="sceneryLayer"></div>
+
+  <!-- Ambient Particle Canvas & Glows -->
+  <canvas id="canvas-bg"></canvas>
+  <div class="glow-orb-1"></div>
+  <div class="glow-orb-2"></div>
+
+  <!-- Header Navigation -->
+  <div class="header-nav-wrap">
+    <nav class="navbar-glass">
+      <a href="/" class="navbar-brand">
+        <div class="brand-logo-wrap">
+          <img src="assets/tungdevai-core-logo.jpg" alt="TungDevAI Logo" onerror="this.style.display='none'" />
+        </div>
+        <div class="brand-text-block">
+          <span class="brand-name">TungDevAI</span>
+          <span class="brand-tagline">Quantum Studio 2026</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#models" class="nav-link">Mô Hình AI</a></li>
+        <li><a href="#agents" class="nav-link">Kho Trợ Lý</a></li>
+        <li><a href="#features" class="nav-link">Web Search & Docs</a></li>
+        <li><a href="#pricing" class="nav-link">Bảng Giá VIP</a></li>
+        <li><a href="https://t.me/grokapiai_bot" target="_blank" class="nav-link">Telegram Bot ↗</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="/login.html" class="btn-nav-login">Đăng Nhập</a>
+        <a href="/chat.html" class="btn-nav-studio">Vào Studio →</a>
+      </div>
+    </nav>
+  </div>
+
+  <main class="site-wrapper">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <!-- 8D Holographic Quantum Core Reactor -->
+      <div class="gyro-stage-8d" id="gyroStage" title="TungDevAI 8D Quantum Hologram Core">
+        <div class="gyro-core-wrap">
+          <div class="gyro-ring gyro-ring-1"><div class="gyro-satellite"></div></div>
+          <div class="gyro-ring gyro-ring-2"><div class="gyro-satellite sat-pink"></div></div>
+          <div class="gyro-ring gyro-ring-3"></div>
+          <div class="gyro-central-orb">
+            <img src="assets/tungdevai-core-logo.jpg" alt="TungDevAI 8D Core" onerror="this.src='assets/tungdevai-core-logo.jpg'" />
+          </div>
+        </div>
+      </div>
+      <div class="hero-badge-pill">
+        <span class="pulse-dot"></span>
+        <span>⚡ TUNGDEVAI 2026 — ĐỘT PHÁ CÔNG NGHỆ TRÍ TUỆ NHÂN TẠO 8D</span>
+        <div class="frequency-visualizer-8d" title="Tần số xử lý AI 8D đồng bộ">
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+          <div class="freq-bar-8d"></div>
+        </div>
+        <span class="telemetry-tag-8d">8D CORE: 99.98%</span>
+      </div>
+
+      <h1 class="hero-title">
+        Kỷ Nguyên Trí Tuệ Siêu Việt<br />
+        <span class="gradient-text-animated">Lập Trình & Sáng Tạo Đỉnh Cao</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Tăng tốc phát triển phần mềm gấp <strong>10 lần</strong>, sinh code chuẩn Production, tạo ảnh nghệ thuật HD 8K, tra cứu Web thời gian thực và phân tích đa dạng tài liệu PDF/Code trong một cú click.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="/chat.html" class="btn-hero-primary">
+          <span>🚀 Trải Nghiệm Studio Miễn Phí</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="https://t.me/grokapiai_bot" target="_blank" class="btn-hero-secondary">
+          <span>✈️ Kết Nối Telegram Bot (24/7)</span>
+        </a>
+      </div>
+
+      <!-- Live Mockup Window -->
+      <div class="mockup-container tilt-card-8d laser-border-8d hud-box-8d">
+        <div class="mockup-topbar">
+          <div class="mockup-traffic-dots">
+            <span class="traffic-dot red"></span>
+            <span class="traffic-dot yellow"></span>
+            <span class="traffic-dot green"></span>
+          </div>
+          <div class="mockup-tabs">
+            <button class="mockup-tab-btn active" id="tabCoder">👑 Coder v1.0</button>
+            <button class="mockup-tab-btn" id="tabVision">🎨 Vision 1.5</button>
+            <button class="mockup-tab-btn" id="tabSearch">🌐 Web Search</button>
+          </div>
+        </div>
+        <div class="mockup-body" id="mockupContent">
+          <span class="mockup-code-comment"># TungDevAI Quantum Core — Production Grade Architecture</span><br />
+          <span class="mockup-code-highlight">async def</span> <span class="mockup-code-func">deploy_ai_system</span>(cluster: <span class="mockup-code-str">"NVIDIA NIM"</span>) -> <span class="mockup-code-highlight">bool</span>:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;engine = <span class="mockup-code-func">QuantumPipeline</span>(models=[<span class="mockup-code-str">"Coder-v1"</span>, <span class="mockup-code-str">"Vision-1.5"</span>])<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;await engine.<span class="mockup-code-func">auto_audit_security</span>(zero_trust=<span class="mockup-code-highlight">True</span>)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="mockup-code-highlight">return</span> await engine.<span class="mockup-code-func">launch</span>(latency_ms=85)<br /><br />
+          <span class="mockup-code-comment">>>> [SUCCESS] 🚀 Hệ thống TungDevAI sẵn sàng phục vụ 50,000+ người dùng!</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Ribbon -->
+    <section class="stats-ribbon-grid">
+      <div class="stat-card tilt-card-8d hud-box-8d">
+        <div class="stat-value gradient-text-animated">50K+</div>
+        <div class="stat-label">Lập Trình Viên & Doanh Nghiệp</div>
+      </div>
+      <div class="stat-card tilt-card-8d hud-box-8d">
+        <div class="stat-value" style="color: #06b6d4;">< 85ms</div>
+        <div class="stat-label">Thời Gian Phản Hồi Siêu Tốc</div>
+      </div>
+      <div class="stat-card tilt-card-8d hud-box-8d">
+        <div class="stat-value gradient-text-gold">99.99%</div>
+        <div class="stat-label">Độ Chính Xác Mã Nguồn Chuẩn</div>
+      </div>
+      <div class="stat-card tilt-card-8d hud-box-8d">
+        <div class="stat-value" style="color: #a78bfa;">24/7</div>
+        <div class="stat-label">Hoạt Động Không Gián Đoạn (VPS)</div>
+      </div>
+    </section>
+
+    <!-- Model Cluster Section -->
+    <section id="models" style="padding-top: 2rem;">
+      <div class="section-header">
+        <span class="section-badge">CỤM MÔ HÌNH AI ĐỘC QUYỀN</span>
+        <h2 class="section-title">Hệ Thống 4 Cỗ Máy Siêu Trí Tuệ</h2>
+        <p class="section-sub">Được tối ưu hóa chuyên biệt cho từng tác vụ từ lập trình chuyên sâu, giải thuật logic, đàm thoại siêu tốc đến tạo ảnh 8K.</p>
+      </div>
+
+      <div class="models-grid">
+        <!-- Model 1 -->
+        <div class="model-card-giant tilt-card-8d hud-box-8d">
+          <div>
+            <div class="model-icon-box" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.35); color: #818cf8;">👑</div>
+            <h3 class="model-card-title">TungDevAI Coder v1.0</h3>
+            <p class="model-card-desc">Mô hình Lập Trình độc quyền do TungDevAI phát triển. Sinh code sạch, không lỗi, áp dụng Clean Architecture chuẩn Production.</p>
+          </div>
+          <span class="model-card-tag" style="background: rgba(99, 102, 241, 0.2); color: #818cf8;">Flagship ⭐</span>
+        </div>
+
+        <!-- Model 2 -->
+        <div class="model-card-giant tilt-card-8d hud-box-8d">
+          <div>
+            <div class="model-icon-box" style="background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #60a5fa;">💻</div>
+            <h3 class="model-card-title">TungDevAI Coder Pro</h3>
+            <p class="model-card-desc">Cụm NVIDIA NIM DeepCoder. Chuyên sâu giải thuật phức tạp, tối ưu hiệu năng $O(1)$, refactor mã nguồn và kiểm thử vi mô.</p>
+          </div>
+          <span class="model-card-tag" style="background: rgba(59, 130, 246, 0.2); color: #60a5fa;">Chuyên Code ⚡</span>
+        </div>
+
+        <!-- Model 3 -->
+        <div class="model-card-giant tilt-card-8d hud-box-8d">
+          <div>
+            <div class="model-icon-box" style="background: rgba(6, 182, 212, 0.15); border: 1px solid rgba(6, 182, 212, 0.35); color: #22d3ee;">⚡</div>
+            <h3 class="model-card-title">TungDevAI Ultra Fast</h3>
+            <p class="model-card-desc">Google Gemini 3.1 Flash-Lite Engine. Tốc độ phản hồi cực nhanh dưới 85ms, giải đáp thắc mắc tức thì và sửa lỗi cấp tốc.</p>
+          </div>
+          <span class="model-card-tag" style="background: rgba(6, 182, 212, 0.2); color: #22d3ee;">Siêu Tốc 🚀</span>
+        </div>
+
+        <!-- Model 4 -->
+        <div class="model-card-giant tilt-card-8d hud-box-8d">
+          <div>
+            <div class="model-icon-box" style="background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.35); color: #f472b6;">🎨</div>
+            <h3 class="model-card-title">TungDevAI Vision 1.5</h3>
+            <p class="model-card-desc">Động cơ FLUX / SDXL Turbo AI Studio. Tạo tác phẩm nghệ thuật Photorealistic 8K, Anime, 3D Render và hình nền siêu thực.</p>
+          </div>
+          <span class="model-card-tag" style="background: rgba(236, 72, 153, 0.2); color: #f472b6;">Image Studio 🖼️</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kho 6 Trợ Lý AI Chuyên Nghiệp -->
+    <section id="agents" style="padding-top: 2rem;">
+      <div class="section-header">
+        <span class="section-badge">AI AGENT MARKETPLACE</span>
+        <h2 class="section-title">Kho Trợ Lý AI Chuyên Nghiệp</h2>
+        <p class="section-sub">Chuyển đổi linh hoạt giữa 6 nhân cách AI chuyên sâu để giải quyết trọn vẹn mọi yêu cầu công việc.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">💻</div>
+          <h3 class="bento-title">Senior Fullstack Architect</h3>
+          <p class="bento-desc">Kiến trúc sư phần mềm cấp cao. Sinh code hoàn chỉnh, Clean Architecture, CI/CD và giải quyết bài toán chịu tải lớn.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">🛡️</div>
+          <h3 class="bento-title">Hacker Mũ Trắng & Pentest</h3>
+          <p class="bento-desc">Chuyên gia an ninh mạng. Rà quét lỗ hổng OWASP Top 10, kiểm thử thâm nhập và hướng dẫn vá lỗi bảo mật Zero-Trust.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">📈</div>
+          <h3 class="bento-title">Phù Thủy Content & Marketing</h3>
+          <p class="bento-desc">Bậc thầy sáng tạo nội dung. Viết kịch bản video TikTok viral giật Hook 3s đầu, bài viết quảng cáo chuyển đổi AIDA/PAS.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">💼</div>
+          <h3 class="bento-title">Cố Vấn Khởi Nghiệp & Kinh Doanh</h3>
+          <p class="bento-desc">Cố vấn chiến lược doanh nghiệp. Lập kế hoạch kinh doanh, mô hình Lean Canvas, định giá và tối ưu dòng tiền.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">🎓</div>
+          <h3 class="bento-title">Gia Sư Lập Trình & Thuật Toán</h3>
+          <p class="bento-desc">Huấn luyện viên DSA & LeetCode. Giải thích bài toán từng bước với sơ đồ trực quan và rèn luyện tư duy logic.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">📊</div>
+          <h3 class="bento-title">Data Scientist & AI Researcher</h3>
+          <p class="bento-desc">Chuyên gia Khoa học Dữ liệu. Xử lý Pandas/NumPy, vẽ biểu đồ trực quan hóa và xây dựng mô hình Học máy (Machine Learning).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Breakthrough Features Section -->
+    <section id="features" style="padding-top: 2rem;">
+      <div class="section-header">
+        <span class="section-badge">TÍNH NĂNG ĐỘT PHÁ</span>
+        <h2 class="section-title">Trang Bị Siêu Năng Lực Toàn Diện</h2>
+        <p class="section-sub">Tích hợp những công nghệ AI tiên phong nhất để nâng cao hiệu suất làm việc của bạn.</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">🌐</div>
+          <h3 class="bento-title">Tìm Kiếm Web Thời Gian Thực</h3>
+          <p class="bento-desc">Truy cập dữ liệu Internet năm 2026 trực tiếp. Tự động đọc và tóm tắt nội dung của bất kỳ đường link URL nào.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">📁</div>
+          <h3 class="bento-title">Phân Tích Tài Liệu PDF & Code</h3>
+          <p class="bento-desc">Kéo thả tệp PDF, Word (.docx), CSV, JSON hoặc file code dự án để AI đọc hiểu, rà soát lỗi và trích xuất dữ liệu.</p>
+        </div>
+        <div class="bento-item tilt-card-8d hud-box-8d">
+          <div class="bento-icon">⚡</div>
+          <h3 class="bento-title">Chạy Code & Sandbox Trực Tiếp</h3>
+          <p class="bento-desc">Biên dịch và chạy trực tiếp code Python, HTML/JS ngay trong khung chat mà không cần cài đặt môi trường.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" style="padding-top: 2rem;">
+      <div class="section-header">
+        <span class="section-badge">BẢNG GIÁ DỊCH VỤ</span>
+        <h2 class="section-title">Lựa Chọn Gói Phù Hợp Với Bạn</h2>
+        <p class="section-sub">Đầu tư thông minh để sở hữu trợ lý AI hàng đầu với mức giá tối ưu nhất.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Trial Card -->
+        <div class="pricing-card tilt-card-8d hud-box-8d">
+          <div>
+            <div class="plan-name">Gói Dùng Thử</div>
+            <div class="plan-price">0 đ<span> / ngày</span></div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item">✓ 20 tin nhắn AI mỗi ngày</li>
+              <li class="plan-feature-item">✓ Truy cập Coder v1.0 & Ultra Fast</li>
+              <li class="plan-feature-item">✓ Chạy code trực tiếp Web & Telegram</li>
+              <li class="plan-feature-item">✓ Lưu lịch sử chat trên thiết bị</li>
+            </ul>
+          </div>
+          <a href="/chat.html" class="btn-plan-action secondary">Bắt Đầu Ngay</a>
+        </div>
+
+        <!-- Pro Card (Featured) -->
+        <div class="pricing-card featured tilt-card-8d laser-border-8d hud-box-8d">
+          <div class="featured-badge">🔥 ĐƯỢC ƯA CHUỘNG NHẤT</div>
+          <div>
+            <div class="plan-name gradient-text-animated">Gói Pro VIP</div>
+            <div class="plan-price">50.000 đ<span> / 30 ngày</span></div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item highlight">✓ 500 tin nhắn AI chất lượng cao/ngày</li>
+              <li class="plan-feature-item highlight">✓ Mở khóa Coder Pro (NVIDIA NIM ⚡)</li>
+              <li class="plan-feature-item highlight">✓ Mở khóa Vision 1.5 tạo ảnh 8K</li>
+              <li class="plan-feature-item highlight">✓ Live Web Search & Đọc PDF/Word/Code</li>
+              <li class="plan-feature-item highlight">✓ Kho 6 Trợ Lý AI Chuyên Nghiệp</li>
+            </ul>
+          </div>
+          <a href="/pricing.html" class="btn-plan-action primary">Nâng Cấp Pro Ngay →</a>
+        </div>
+
+        <!-- Business Card -->
+        <div class="pricing-card tilt-card-8d hud-box-8d">
+          <div>
+            <div class="plan-name gradient-text-gold">Gói Business</div>
+            <div class="plan-price">150.000 đ<span> / 90 ngày</span></div>
+            <ul class="plan-features-list">
+              <li class="plan-feature-item highlight">✓ Không giới hạn tin nhắn AI (Unlimited)</li>
+              <li class="plan-feature-item highlight">✓ Ưu tiên cụm máy chủ VIP cao nhất</li>
+              <li class="plan-feature-item highlight">✓ Toàn bộ tính năng cao cấp không giới hạn</li>
+              <li class="plan-feature-item highlight">✓ Hỗ trợ kỹ thuật 1-1 riêng biệt</li>
+            </ul>
+          </div>
+          <a href="/pricing.html" class="btn-plan-action secondary">Đăng Ký Business</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="site-wrapper">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-name" style="margin-bottom: 0.6rem;">TungDevAI Studio</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Siêu nền tảng Trí Tuệ Nhân Tạo Lập Trình & AI Agent đa phương thức thế hệ mới 2026.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Sản Phẩm</div>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="/chat.html">Web Chat Studio</a></li>
+            <li class="footer-link-item"><a href="https://t.me/grokapiai_bot" target="_blank">Telegram Bot</a></li>
+            <li class="footer-link-item"><a href="/pricing.html">Bảng Giá VIP</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Cộng Đồng & Hỗ Trợ</div>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="https://t.me/usertungpham" target="_blank">Admin: Phạm Tùng</a></li>
+            <li class="footer-link-item"><a href="https://t.me/tungdevai_channel" target="_blank">Kênh Thông Báo</a></li>
+            <li class="footer-link-item"><a href="/j-panel.html">Cổng Quản Trị</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 TungDevAI Studio. Bảo lưu mọi quyền. Phát triển bởi Phạm Tùng.</span>
+        <span>🟢 Hệ thống Cloud VPS hoạt động ổn định 99.99%</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Background Animation & Mockup Script -->
+  <script>
+    
+    /* =========================================================================
+       8D QUANTUM MULTI-LAYER INTERACTIVE SIMULATION ENGINE
+       - Layer 1: 3D Undulating Cyber Grid Plane with Perspective Math
+       - Layer 2: 3D Warp Space Starfield with Depth Parallax
+       - Layer 3: Interactive Particle Constellation with Synaptic Laser Web
+       - Layer 4: Meteor Shooting Auroras
+       - Layer 5: 3D Mouse Physics & Holographic Specular Tilt on Cards
+       - Layer 6: Quantum Shockwave Click Ripple
+       ========================================================================= */
+    (function() {
+      // --- 1. 8D MULTI-DEPTH CANVAS ---
+      const canvas = document.getElementById("canvas-bg");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      let width, height;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resize);
+      resize();
+
+      const mouse = {
+        x: width / 2,
+        y: height / 2,
+        targetX: width / 2,
+        targetY: height / 2,
+        speedX: 0,
+        speedY: 0
+      };
+
+      const sparks = [];
+      window.addEventListener("mousemove", (e) => {
+        mouse.targetX = e.clientX;
+        mouse.targetY = e.clientY;
+
+        // Spawn subtle cursor spark
+        if (Math.random() > 0.4) {
+          sparks.push({
+            x: e.clientX,
+            y: e.clientY,
+            vx: (Math.random() - 0.5) * 1.5,
+            vy: (Math.random() - 0.5) * 1.5,
+            size: Math.random() * 2 + 1,
+            alpha: 1,
+            color: Math.random() > 0.5 ? '#38bdf8' : '#818cf8'
+          });
+        }
+      }, { passive: true });
+
+      // 3D Warp Stars (Layer 1)
+      const stars3D = [];
+      const numStars = Math.min(180, Math.floor((width * height) / 8500));
+      for (let i = 0; i < numStars; i++) {
+        stars3D.push({
+          x: (Math.random() - 0.5) * width * 2.5,
+          y: (Math.random() - 0.5) * height * 2.5,
+          z: Math.random() * 1200 + 50,
+          size: Math.random() * 1.5 + 0.5,
+          color: Math.random() > 0.4 ? "#38bdf8" : (Math.random() > 0.5 ? "#818cf8" : "#ec4899"),
+          baseAlpha: Math.random() * 0.7 + 0.3
+        });
+      }
+
+      // Constellation Nodes with Synapses (Layer 2)
+      const nodes = [];
+      const numNodes = Math.min(50, Math.floor(width / 26));
+      for (let i = 0; i < numNodes; i++) {
+        nodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.7,
+          vy: (Math.random() - 0.5) * 0.7,
+          radius: Math.random() * 2.2 + 1.2,
+          hue: Math.random() > 0.5 ? 195 : 245 // cyan or indigo
+        });
+      }
+
+      // Shooting Meteors (Layer 3)
+      const meteors = [];
+      function spawnMeteor() {
+        meteors.push({
+          x: Math.random() * width * 0.9,
+          y: Math.random() * height * 0.4,
+          len: Math.random() * 120 + 80,
+          speed: Math.random() * 10 + 12,
+          angle: (Math.PI / 4) + (Math.random() - 0.5) * 0.2,
+          opacity: 1,
+          width: Math.random() * 2 + 1
+        });
+      }
+      setInterval(spawnMeteor, 3500);
+
+      // 3D Undulating Cyber Grid (Layer 4)
+      let gridTime = 0;
+      function drawCyberGrid3D() {
+        const horizon = height * 0.68;
+        const gridY = height;
+        const gridDepth = horizon;
+        
+        ctx.save();
+        ctx.lineWidth = 1;
+        
+        // Horizontal perspective wave lines
+        const linesCount = 14;
+        for (let i = 0; i <= linesCount; i++) {
+          const ratio = Math.pow(i / linesCount, 2.2);
+          const currentY = horizon + (gridY - horizon) * ratio;
+          const alpha = ratio * 0.28;
+          
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+          
+          for (let x = 0; x <= width; x += 30) {
+            const wave = Math.sin(x * 0.008 + gridTime * 1.5) * Math.cos(ratio * 5 + gridTime) * (14 * ratio);
+            if (x === 0) ctx.moveTo(x, currentY + wave);
+            else ctx.lineTo(x, currentY + wave);
+          }
+          ctx.stroke();
+        }
+
+        // Perspective vertical lines converging to vanishing point
+        const vX = width * 0.5 + (mouse.x - width * 0.5) * 0.08;
+        const vCount = 24;
+        for (let i = -vCount; i <= vCount; i++) {
+          const bottomX = (width / 2) + i * (width / (vCount * 0.8));
+          ctx.beginPath();
+          ctx.strokeStyle = "rgba(99, 102, 241, 0.12)";
+          ctx.moveTo(vX, horizon);
+          ctx.lineTo(bottomX, gridY);
+          ctx.stroke();
+        }
+        ctx.restore();
+      }
+
+      // Main 8D Animation Loop
+      function animate8D() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Smooth mouse dampening
+        mouse.x += (mouse.targetX - mouse.x) * 0.05;
+        mouse.y += (mouse.targetY - mouse.y) * 0.05;
+        const offsetX = (mouse.x - width / 2) * 0.02;
+        const offsetY = (mouse.y - height / 2) * 0.02;
+
+        gridTime += 0.015;
+
+        // 1. Draw 3D Undulating Cyber Grid
+        drawCyberGrid3D();
+
+        // 2. Draw 3D Warp Starfield
+        const focal = 350;
+        for (let i = 0; i < stars3D.length; i++) {
+          const s = stars3D[i];
+          s.z -= 1.8;
+          if (s.z <= 0) {
+            s.z = 1200;
+            s.x = (Math.random() - 0.5) * width * 2.5;
+            s.y = (Math.random() - 0.5) * height * 2.5;
+          }
+
+          const k = focal / s.z;
+          const px = s.x * k + width / 2 + offsetX * (1200 - s.z) * 0.06;
+          const py = s.y * k + height / 2 + offsetY * (1200 - s.z) * 0.06;
+
+          if (px >= 0 && px < width && py >= 0 && py < height) {
+            const rad = Math.max(0.4, (1 - s.z / 1200) * s.size * 2.5);
+            const alpha = (1 - s.z / 1200) * s.baseAlpha;
+            
+            ctx.beginPath();
+            ctx.arc(px, py, rad, 0, Math.PI * 2);
+            ctx.fillStyle = s.color;
+            ctx.globalAlpha = alpha;
+            ctx.fill();
+
+            // Star trail speed line
+            if (s.z < 600) {
+              const prevK = focal / (s.z + 14);
+              const prevX = s.x * prevK + width / 2 + offsetX * (1200 - s.z) * 0.06;
+              const prevY = s.y * prevK + height / 2 + offsetY * (1200 - s.z) * 0.06;
+              ctx.beginPath();
+              ctx.moveTo(px, py);
+              ctx.lineTo(prevX, prevY);
+              ctx.strokeStyle = s.color;
+              ctx.lineWidth = rad * 0.75;
+              ctx.stroke();
+            }
+          }
+        }
+        ctx.globalAlpha = 1.0;
+
+        // 3. Draw Synaptic Particle Constellation
+        for (let i = 0; i < nodes.length; i++) {
+          const p = nodes[i];
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          // Mouse gravity interaction
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 180) {
+            const force = (180 - dist) / 180;
+            p.x -= (dx / dist) * force * 1.8;
+            p.y -= (dy / dist) * force * 1.8;
+          }
+
+          // Render node
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `hsl(${p.hue}, 90%, 65%)`;
+          ctx.shadowColor = `hsl(${p.hue}, 90%, 65%)`;
+          ctx.shadowBlur = 8;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+
+          // Connect synaptic lines
+          for (let j = i + 1; j < nodes.length; j++) {
+            const p2 = nodes[j];
+            const d = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (d < 130) {
+              const alpha = (1 - d / 130) * 0.35;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+              ctx.lineWidth = 0.9;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // 3.5 Draw Cursor Sparks
+        for (let i = sparks.length - 1; i >= 0; i--) {
+          const sp = sparks[i];
+          sp.x += sp.vx;
+          sp.y += sp.vy;
+          sp.alpha -= 0.035;
+          if (sp.alpha <= 0) {
+            sparks.splice(i, 1);
+            continue;
+          }
+          ctx.beginPath();
+          ctx.arc(sp.x, sp.y, sp.size, 0, Math.PI * 2);
+          ctx.fillStyle = sp.color;
+          ctx.globalAlpha = sp.alpha;
+          ctx.shadowColor = sp.color;
+          ctx.shadowBlur = 6;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+        ctx.globalAlpha = 1.0;
+
+        // 4. Draw Meteors
+        for (let i = meteors.length - 1; i >= 0; i--) {
+          const m = meteors[i];
+          m.x += Math.cos(m.angle) * m.speed;
+          m.y += Math.sin(m.angle) * m.speed;
+          m.opacity -= 0.015;
+
+          if (m.opacity <= 0) {
+            meteors.splice(i, 1);
+            continue;
+          }
+
+          const tailX = m.x - Math.cos(m.angle) * m.len;
+          const tailY = m.y - Math.sin(m.angle) * m.len;
+
+          const grad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
+          grad.addColorStop(0, `rgba(255, 255, 255, ${m.opacity})`);
+          grad.addColorStop(0.3, `rgba(56, 189, 248, ${m.opacity * 0.8})`);
+          grad.addColorStop(1, "transparent");
+
+          ctx.beginPath();
+          ctx.moveTo(m.x, m.y);
+          ctx.lineTo(tailX, tailY);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = m.width;
+          ctx.stroke();
+        }
+
+        requestAnimationFrame(animate8D);
+      }
+      animate8D();
+
+      // --- 2. 8D INTERACTIVE CARD TILT & HOLOGRAPHIC SPECULAR GLOW ---
+      const tiltCards = document.querySelectorAll(".tilt-card-8d");
+      tiltCards.forEach(card => {
+        // Add glare element if not present
+        if (!card.querySelector(".card-glare-8d")) {
+          const glare = document.createElement("div");
+          glare.className = "card-glare-8d";
+          card.appendChild(glare);
+        }
+        const glare = card.querySelector(".card-glare-8d");
+
+        card.addEventListener("mousemove", (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+
+          const rotateX = ((y - centerY) / centerY) * -10;
+          const rotateY = ((x - centerX) / centerX) * 10;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.025, 1.025, 1.025)`;
+          
+          if (glare) {
+            const percentX = (x / rect.width) * 100;
+            const percentY = (y / rect.height) * 100;
+            glare.style.background = `radial-gradient(circle at ${percentX}% ${percentY}%, rgba(255, 255, 255, 0.25) 0%, rgba(99, 102, 241, 0.15) 30%, transparent 70%)`;
+          }
+        }, { passive: true });
+
+        card.addEventListener("mouseleave", () => {
+          card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
+        });
+      });
+
+      // --- 3. 8D QUANTUM SHOCKWAVE CLICK EFFECT ---
+      window.addEventListener("click", (e) => {
+        const ripple = document.createElement("div");
+        ripple.className = "quantum-ripple-8d";
+        ripple.style.left = e.clientX + "px";
+        ripple.style.top = e.clientY + "px";
+        document.body.appendChild(ripple);
+        setTimeout(() => {
+          ripple.remove();
+        }, 750);
+      });
+
+      // --- 4. 8D GYROSCOPE MOUSE PARALLAX ---
+      const gyroStage = document.getElementById("gyroStage");
+      if (gyroStage) {
+        window.addEventListener("mousemove", (e) => {
+          const moveX = (e.clientX / window.innerWidth - 0.5) * 26;
+          const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
+          gyroStage.style.transform = `translate3d(${moveX}px, ${moveY}px, 0)`;
+        }, { passive: true });
+      }
+
+      // --- 5. 3D Scenery Parallax ---
+      const scenery = document.getElementById("sceneryLayer");
+      if (scenery) {
+        window.addEventListener("mousemove", (e) => {
+          const x = (e.clientX / window.innerWidth - 0.5) * -22;
+          const y = (e.clientY / window.innerHeight - 0.5) * -16;
+          scenery.style.transform = `translate3d(${x}px, ${y}px, 0) scale(1.04)`;
+        }, { passive: true });
+      }
+
+      // --- 6. Terminal Mockup Tab Switcher ---
+      const tabCoder = document.getElementById("tabCoder");
+      const tabVision = document.getElementById("tabVision");
+      const tabSearch = document.getElementById("tabSearch");
+      const mockupContent = document.getElementById("mockupContent");
+
+      const snippets = {
+        coder: `<span class="mockup-code-comment"># TungDevAI Quantum Core — Production Grade Architecture 8D</span><br />
+<span class="mockup-code-highlight">async def</span> <span class="mockup-code-func">deploy_ai_system</span>(cluster: <span class="mockup-code-str">"NVIDIA NIM"</span>) -> <span class="mockup-code-highlight">bool</span>:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;engine = <span class="mockup-code-func">QuantumPipeline</span>(models=[<span class="mockup-code-str">"Coder-v1"</span>, <span class="mockup-code-str">"Vision-1.5"</span>])<br />
+&nbsp;&nbsp;&nbsp;&nbsp;await engine.<span class="mockup-code-func">auto_audit_security</span>(zero_trust=<span class="mockup-code-highlight">True</span>)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="mockup-code-highlight">return</span> await engine.<span class="mockup-code-func">launch</span>(latency_ms=85)<br /><br />
+<span class="mockup-code-comment">>>> [SUCCESS] 🚀 Hệ thống TungDevAI 8D sẵn sàng phục vụ 50,000+ người dùng!</span>`,
+        vision: `<span class="mockup-code-comment"># TungDevAI Vision 1.5 — FLUX Turbo 8K Studio</span><br />
+<span class="mockup-code-highlight">prompt</span> = <span class="mockup-code-str">"Cyberpunk futuristic neon city, volumetric fog, 8k masterpiece"</span><br />
+image_url = <span class="mockup-code-func">generate_image_8k</span>(prompt, resolution=<span class="mockup-code-str">"768x768"</span>)<br /><br />
+<span class="mockup-code-comment">>>> [RENDERED] 🎨 Tác phẩm nghệ thuật AI đã sinh xong trong 3.2 giây!</span>`,
+        search: `<span class="mockup-code-comment"># TungDevAI Live Web Search 2026</span><br />
+results = await <span class="mockup-code-func">search_internet</span>(<span class="mockup-code-str">"Tin tức công nghệ mới nhất 2026"</span>)<br />
+<span class="mockup-code-highlight">for</span> item <span class="mockup-code-highlight">in</span> results:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="mockup-code-func">print</span>(f<span class="mockup-code-str">"🌐 {item.title} -> {item.url}"</span>)<br /><br />
+<span class="mockup-code-comment">>>> [CRAWLED] Đã trích xuất 4 nguồn tin tức trực tiếp từ Internet!</span>`
+      };
+
+      function setTab(tab, key) {
+        if (!tab || !mockupContent) return;
+        [tabCoder, tabVision, tabSearch].forEach(t => t && t.classList.remove("active"));
+        tab.classList.add("active");
+        mockupContent.innerHTML = snippets[key];
+      }
+
+      if (tabCoder) tabCoder.onclick = () => setTab(tabCoder, "coder");
+      if (tabVision) tabVision.onclick = () => setTab(tabVision, "vision");
+      if (tabSearch) tabSearch.onclick = () => setTab(tabSearch, "search");
+    })();
+
+  </script>
 </body>
 </html>
